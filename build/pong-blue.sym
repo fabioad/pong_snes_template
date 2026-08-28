@@ -1,0 +1,195 @@
+; this file was created with wlalink by ville helin <ville.helin@iki.fi>.
+; wla symbolic information for "build/pong-blue.sfc".
+
+[information]
+version 3
+wlasymbol true
+
+[labels]
+00:87de UnusedInterrupt
+00:8721 Reset
+00:8766 MainLoop
+00:8775 GameFrame
+00:87b3 NMI
+00:87d5 WaitNMI
+00:87d7 WaitNMILoop
+00:8446 InitGraphics
+00:84ab LoadPalette
+00:84e4 SetVRAMAddress
+00:84f1 LoadTiles
+00:852d LoadSpriteTiles
+00:8563 ClearTilemap
+00:8575 ClearTilemapLoop
+00:8781 CopyAutoJoy
+00:8783 CopyAutoJoyWait
+00:857f StrPong
+00:8584 Str1Jogador
+00:858e Str2Jogador
+00:8598 DrawTitleScreen
+00:85aa DrawPongLoop
+00:85ba DrawPongDone
+00:85c3 Draw1PLoop
+00:85d3 Draw1PDone
+00:85dc Draw2PLoop
+00:85ec Draw2PDone
+00:85f0 DrawCursor
+00:8607 CursorOn1P
+00:8609 StoreCursor1
+00:861d CursorOn2P
+00:861f StoreCursor2
+00:8626 UpdateTitle
+00:863c TitleCheckDown
+00:864e TitleCheckStart
+00:8660 UpdateTitleDone
+00:8000 InitGameState
+00:8021 DrawPlayfield
+00:802c DrawPFRow
+00:8044 DrawPFCol
+00:805c DrawPFWall
+00:8060 DrawPFEmpty
+00:8062 DrawPFStore
+00:8079 EnterGame
+00:80ac UpdatePaddleLeft
+00:80c0 PaddleLeftDown
+00:80d2 PaddleLeftDone
+00:80d5 UpdatePaddleRight
+00:80f7 PaddleRightDown
+00:8104 UpdatePaddleRightHuman
+00:8118 PaddleRightHumanDown
+00:812a PaddleRightDone
+00:812d ClampPaddleY
+00:8136 ClampPaddleMax
+00:813e ClampPaddleOk
+00:813f UpdateBall
+00:8152 CollideWalls
+00:8165 CollideWallBottom
+00:8172 CollideWallsDone
+00:8175 NegateBallDy
+00:817e NegateBallDx
+00:8187 CollidePaddles
+00:81a9 CollideLeftY
+00:81bd CollideRightPaddle
+00:81cd CollideRightX
+00:81e0 CollideRightY
+00:81f2 CollidePaddlesDone
+00:81f5 WriteScorePair
+00:81fa WriteScoreTens
+00:8204 WriteScoreOnes
+00:821a DrawScore
+00:823a IncScore
+00:823f IncScoreDone
+00:8240 CheckGoal
+00:824e ServeFromLeft
+00:8260 ServeFromRight
+00:8278 ResetBall
+00:8283 UpdateGame
+00:8661 HideAllSprites
+00:8668 HideOAMLow
+00:8682 HideOAMHi
+00:868c WriteSprite
+00:86ad DrawPaddle
+00:86b3 DrawPaddleLoop
+00:86c3 BuildOAM
+00:86ee DMAOAM
+00:8296 TileData
+00:8426 SpriteTiles
+
+[definitions]
+00000001 _sizeof_UnusedInterrupt
+00000045 _sizeof_Reset
+0000000f _sizeof_MainLoop
+0000000c _sizeof_GameFrame
+00000022 _sizeof_NMI
+00000002 _sizeof_WaitNMI
+00000007 _sizeof_WaitNMILoop
+00000065 _sizeof_InitGraphics
+00000039 _sizeof_LoadPalette
+0000000d _sizeof_SetVRAMAddress
+0000003c _sizeof_LoadTiles
+00000036 _sizeof_LoadSpriteTiles
+00000012 _sizeof_ClearTilemap
+0000000a _sizeof_ClearTilemapLoop
+00000002 _sizeof_CopyAutoJoy
+00000030 _sizeof_CopyAutoJoyWait
+00000005 _sizeof_StrPong
+0000000a _sizeof_Str1Jogador
+0000000a _sizeof_Str2Jogador
+00000012 _sizeof_DrawTitleScreen
+00000010 _sizeof_DrawPongLoop
+00000009 _sizeof_DrawPongDone
+00000010 _sizeof_Draw1PLoop
+00000009 _sizeof_Draw1PDone
+00000010 _sizeof_Draw2PLoop
+00000004 _sizeof_Draw2PDone
+00000017 _sizeof_DrawCursor
+00000002 _sizeof_CursorOn1P
+00000014 _sizeof_StoreCursor1
+00000002 _sizeof_CursorOn2P
+00000007 _sizeof_StoreCursor2
+00000016 _sizeof_UpdateTitle
+00000012 _sizeof_TitleCheckDown
+00000012 _sizeof_TitleCheckStart
+00000001 _sizeof_UpdateTitleDone
+00000021 _sizeof_InitGameState
+0000000b _sizeof_DrawPlayfield
+00000018 _sizeof_DrawPFRow
+00000018 _sizeof_DrawPFCol
+00000004 _sizeof_DrawPFWall
+00000002 _sizeof_DrawPFEmpty
+00000017 _sizeof_DrawPFStore
+00000033 _sizeof_EnterGame
+00000014 _sizeof_UpdatePaddleLeft
+00000012 _sizeof_PaddleLeftDown
+00000003 _sizeof_PaddleLeftDone
+00000022 _sizeof_UpdatePaddleRight
+0000000d _sizeof_PaddleRightDown
+00000014 _sizeof_UpdatePaddleRightHuman
+00000012 _sizeof_PaddleRightHumanDown
+00000003 _sizeof_PaddleRightDone
+00000009 _sizeof_ClampPaddleY
+00000008 _sizeof_ClampPaddleMax
+00000001 _sizeof_ClampPaddleOk
+00000013 _sizeof_UpdateBall
+00000013 _sizeof_CollideWalls
+0000000d _sizeof_CollideWallBottom
+00000003 _sizeof_CollideWallsDone
+00000009 _sizeof_NegateBallDy
+00000009 _sizeof_NegateBallDx
+00000022 _sizeof_CollidePaddles
+00000014 _sizeof_CollideLeftY
+00000010 _sizeof_CollideRightPaddle
+00000013 _sizeof_CollideRightX
+00000012 _sizeof_CollideRightY
+00000003 _sizeof_CollidePaddlesDone
+00000005 _sizeof_WriteScorePair
+0000000a _sizeof_WriteScoreTens
+00000016 _sizeof_WriteScoreOnes
+00000020 _sizeof_DrawScore
+00000005 _sizeof_IncScore
+00000001 _sizeof_IncScoreDone
+0000000e _sizeof_CheckGoal
+00000012 _sizeof_ServeFromLeft
+00000018 _sizeof_ServeFromRight
+0000000b _sizeof_ResetBall
+00000013 _sizeof_UpdateGame
+00000007 _sizeof_HideAllSprites
+0000001a _sizeof_HideOAMLow
+0000000a _sizeof_HideOAMHi
+00000021 _sizeof_WriteSprite
+00000006 _sizeof_DrawPaddle
+00000010 _sizeof_DrawPaddleLoop
+0000002b _sizeof_BuildOAM
+00000033 _sizeof_DMAOAM
+00000190 _sizeof_TileData
+00000020 _sizeof_SpriteTiles
+
+[sections]
+00000000 00:0000 8000 00000296 Game
+00000296 00:0296 8296 000001b0 Assets
+00000446 00:0446 8446 00000139 PPU
+0000057f 00:057f 857f 000000e2 Title
+00000661 00:0661 8661 000000c0 Sprites
+00000721 00:0721 8721 00000060 Reset
+00000781 00:0781 8781 00000032 Input
+000007b3 00:07b3 87b3 0000002b NMI
+000007de 00:07de 87de 00000001 Vectors

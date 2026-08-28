@@ -1,0 +1,23 @@
+; this file was created with wlalink by ville helin <ville.helin@iki.fi>.
+; wla symbolic information for "build/pong-black.sfc".
+
+[information]
+version 3
+wlasymbol true
+
+[labels]
+00:805d UnusedInterrupt
+00:8038 Reset
+00:805a HaltLoop
+00:8000 InitBackdropColor
+
+[definitions]
+00000001 _sizeof_UnusedInterrupt
+00000022 _sizeof_Reset
+00000003 _sizeof_HaltLoop
+00000038 _sizeof_InitBackdropColor
+
+[sections]
+00000000 00:0000 8000 00000038 PPU
+00000038 00:0038 8038 00000025 Reset
+0000005d 00:005d 805d 00000001 Vectors

@@ -1,0 +1,193 @@
+; SNES MMIO names and constants.
+; All writes to these registers must use 8-bit accumulator mode.
+
+; --- PPU ($2100-$213F) -------------------------------------------------------
+.DEFINE INIDISP     $2100
+.DEFINE OBJSEL      $2101
+.DEFINE OAMADDL     $2102
+.DEFINE OAMADDH     $2103
+.DEFINE OAMDATA     $2104
+.DEFINE BGMODE      $2105
+.DEFINE MOSAIC      $2106
+.DEFINE BG1SC       $2107
+.DEFINE BG2SC       $2108
+.DEFINE BG3SC       $2109
+.DEFINE BG4SC       $210A
+.DEFINE BG12NBA     $210B
+.DEFINE BG34NBA     $210C
+.DEFINE BG1HOFS     $210D
+.DEFINE BG1VOFS     $210E
+.DEFINE BG2HOFS     $210F
+.DEFINE BG2VOFS     $2110
+.DEFINE BG3HOFS     $2111
+.DEFINE BG3VOFS     $2112
+.DEFINE BG4HOFS     $2113
+.DEFINE BG4VOFS     $2114
+.DEFINE VMAIN       $2115
+.DEFINE VMADDL      $2116
+.DEFINE VMADDH      $2117
+.DEFINE VMDATAL     $2118
+.DEFINE VMDATAH     $2119
+.DEFINE CGADD       $2121
+.DEFINE CGDATA      $2122
+.DEFINE W12SEL      $2123
+.DEFINE W34SEL      $2124
+.DEFINE WOBJSEL     $2125
+.DEFINE WH0         $2126
+.DEFINE WH1         $2127
+.DEFINE WH2         $2128
+.DEFINE WH3         $2129
+.DEFINE WBGLOG      $212A
+.DEFINE WOBJLOG     $212B
+.DEFINE TM          $212C
+.DEFINE TS          $212D
+.DEFINE TMW         $212E
+.DEFINE TSW         $212F
+.DEFINE CGWSEL      $2130
+.DEFINE CGADSUB     $2131
+.DEFINE COLDATA     $2132
+.DEFINE SETINI      $2133
+
+; --- CPU / DMA ($4200-$420D) -------------------------------------------------
+.DEFINE NMITIMEN    $4200
+.DEFINE WRIO        $4201
+.DEFINE MDMAEN      $420B
+.DEFINE HDMAEN      $420C
+.DEFINE MEMSEL      $420D
+.DEFINE DMAP0       $4300
+.DEFINE BBAD0       $4301
+.DEFINE A1T0L       $4302
+.DEFINE A1T0H       $4303
+.DEFINE A1B0        $4304
+.DEFINE DAS0L       $4305
+.DEFINE DAS0H       $4306
+
+; --- Readback ----------------------------------------------------------------
+.DEFINE RDNMI       $4210
+.DEFINE HVBJOY      $4212
+.DEFINE JOY1L       $4218
+.DEFINE JOY1H       $4219
+.DEFINE JOY2L       $421A
+.DEFINE JOY2H       $421B
+
+; --- Manual joypad strobe (milestone 7) --------------------------------------
+.DEFINE JOYSER0     $4016
+.DEFINE JOYSER1     $4017
+
+; --- INIDISP bits ------------------------------------------------------------
+.DEFINE INIDISP_FORCEBLANK  $80
+.DEFINE INIDISP_FULLBRIGHT  $0F
+.DEFINE NMITIMEN_NMI_JOY    $81
+.DEFINE HVBJOY_AUTOJOY      $01
+
+; --- HVBJOY bits (milestone 4) -----------------------------------------------
+.DEFINE HVBJOY_VBLANK       $80
+
+; --- Graphics (milestone 5) --------------------------------------------------
+.DEFINE VMAIN_INC_HIGH      $80
+.DEFINE TM_BG1              $01
+.DEFINE TM_OBJ              $10
+.DEFINE TM_BG1_OBJ          $11
+.DEFINE OBJSEL_8X8_AT_4000  $02
+.DEFINE VRAM_OBJ_TILES      $4000
+.DEFINE CGRAM_SPRITE0       $80
+.DEFINE OAM_Y_OFFSCREEN     $E0
+.DEFINE OAM_ATTR_PRI2       $20
+.DEFINE OAM_LOW_BYTES       36
+.DEFINE OAM_HI_BYTES        32
+.DEFINE OAM_TOTAL_BYTES     544
+.DEFINE SPRITE_TILE_BYTES   32
+.DEFINE BGMODE_0            $00
+.DEFINE VRAM_BG1_TILES      $0000
+.DEFINE VRAM_BG1_MAP        $0800
+.DEFINE BG1SC_32X32_AT_0800 $08
+.DEFINE BG12NBA_TILES_0000  $00
+.DEFINE TILEMAP_W           32
+.DEFINE TILEMAP_WORDS       1024
+.DEFINE TILE_SPACE          0
+.DEFINE TILE_A              1
+.DEFINE TILE_E              2
+.DEFINE TILE_G              3
+.DEFINE TILE_N              4
+.DEFINE TILE_O              5
+.DEFINE TILE_P              6
+.DEFINE TILE_R              7
+.DEFINE TILE_S              8
+.DEFINE TILE_T              9
+.DEFINE TILE_SOLID          10
+.DEFINE TILE_NET            11
+.DEFINE TILE_DIGIT_0        12
+.DEFINE TILE_D              22
+.DEFINE TILE_J              23
+.DEFINE TILE_CURSOR         24
+.DEFINE FONT_TILE_COUNT     10
+.DEFINE BG_TILE_COUNT       25
+.DEFINE TILE_BYTES          (BG_TILE_COUNT * 16)
+.DEFINE SCORE_Y             2
+.DEFINE SCORE_LEFT_X        8
+.DEFINE SCORE_RIGHT_X       22
+.DEFINE SCORE_LEFT_VRAM     (VRAM_BG1_MAP + SCORE_Y * TILEMAP_W + SCORE_LEFT_X)
+.DEFINE SCORE_RIGHT_VRAM    (VRAM_BG1_MAP + SCORE_Y * TILEMAP_W + SCORE_RIGHT_X)
+.DEFINE SCORE_MAX           99
+.DEFINE PADDLE_LEFT_X       16
+.DEFINE PADDLE_RIGHT_X      232
+.DEFINE PADDLE_W            8
+.DEFINE PADDLE_H            32
+.DEFINE PADDLE_SEGMENTS     4
+.DEFINE PADDLE_SPEED        2
+.DEFINE PADDLE_MIN_Y        8
+.DEFINE PADDLE_MAX_Y        184
+.DEFINE BALL_SIZE           8
+.DEFINE BALL_SPEED          2
+.DEFINE BALL_MIN_Y          8
+.DEFINE BALL_MAX_Y          208
+.DEFINE BALL_MAX_X          248
+.DEFINE PADDLE_START_Y      96
+.DEFINE BALL_START_X        120
+.DEFINE BALL_START_Y        108
+.DEFINE PLAYFIELD_BOTTOM_ROW 27
+.DEFINE TITLE_PONG_X        14
+.DEFINE TITLE_PONG_Y        10
+.DEFINE TITLE_MENU_X        12
+.DEFINE TITLE_CURSOR_X      10
+.DEFINE TITLE_MENU1_Y       13
+.DEFINE TITLE_MENU2_Y       15
+.DEFINE TITLE_PONG_VRAM     (VRAM_BG1_MAP + TITLE_PONG_Y * TILEMAP_W + TITLE_PONG_X)
+.DEFINE TITLE_MENU1_VRAM    (VRAM_BG1_MAP + TITLE_MENU1_Y * TILEMAP_W + TITLE_MENU_X)
+.DEFINE TITLE_MENU2_VRAM    (VRAM_BG1_MAP + TITLE_MENU2_Y * TILEMAP_W + TITLE_MENU_X)
+.DEFINE TITLE_CURSOR1_VRAM  (VRAM_BG1_MAP + TITLE_MENU1_Y * TILEMAP_W + TITLE_CURSOR_X)
+.DEFINE TITLE_CURSOR2_VRAM  (VRAM_BG1_MAP + TITLE_MENU2_Y * TILEMAP_W + TITLE_CURSOR_X)
+.DEFINE TILE_WHITE_LO       $FF
+.DEFINE TILE_WHITE_HI       $7F
+.DEFINE TILE_YELLOW_LO      $FF
+.DEFINE TILE_YELLOW_HI      $03
+
+; --- Game states (milestone 6) -----------------------------------------------
+.DEFINE STATE_TITLE         0
+.DEFINE STATE_GAME          1
+
+; --- Standard SNES joypad bits in JOY1H/JOY1L order --------------------------
+; JOY1H: B Y SELECT START UP DOWN LEFT RIGHT
+; JOY1L: A X L R 0 0 0 0
+.DEFINE BUTTON_B            $8000
+.DEFINE BUTTON_Y            $4000
+.DEFINE BUTTON_SELECT       $2000
+.DEFINE BUTTON_START        $1000
+.DEFINE BUTTON_UP           $0800
+.DEFINE BUTTON_DOWN         $0400
+.DEFINE BUTTON_LEFT         $0200
+.DEFINE BUTTON_RIGHT        $0100
+.DEFINE BUTTON_A            $0080
+.DEFINE BUTTON_X            $0040
+.DEFINE BUTTON_L            $0020
+.DEFINE BUTTON_R            $0010
+
+; --- Solid-color tests (milestone 3) -----------------------------------------
+; SNES CGRAM is BGR555: 0bbbbbgg gggrrrrr (low byte first).
+; Override from the Makefile: make COLOR=black|blue|red
+.IFNDEF BACKDROP_LO
+    .DEFINE BACKDROP_LO     $00
+.ENDIF
+.IFNDEF BACKDROP_HI
+    .DEFINE BACKDROP_HI     $7C
+.ENDIF
